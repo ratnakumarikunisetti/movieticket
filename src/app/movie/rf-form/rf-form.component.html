@@ -1,0 +1,94 @@
+<p>rf-form works!</p>
+<div class="alert alert-primary">
+    <h3>Movie Form</h3>
+</div>
+<form [formGroup]="movieForm" (ngSubmit)="addMovie()">
+    <div class="form-group">
+        <div *ngIf="movieForm.controls.movieId.errors && 
+        (movieForm.controls.movieId.touched || movieForm.controls.movieId.dirty)">
+            Movie Id is required
+        </div>
+        <label for="movieId">Movie Id</label>
+        <input class="form-control" type="text" name="movieId" id="movieId" formControlName="movieId">
+    </div>
+    <div class="form-group">
+        <div *ngIf="movieForm.controls.movieName.errors && 
+                (movieForm.controls.movieName.touched || movieForm.controls.movieName.dirty)">
+            Movie Name is required
+        </div>
+        <label for="movieName">movie Name</label>
+        <input class="form-control" type="text" name="movieName" id="movieName" formControlName="movieName">
+    </div>
+    <div class="form-group">
+        <div *ngIf="movieForm.controls.movieName.errors && 
+        (movieForm.controls.movieName.touched || movieForm.controls.movieName.dirty)">
+            Movie Genre is required
+        </div>
+
+        <label for="movieGenre">Movie Genre</label>
+        <input class="form-control" type="text" name="movieGenre" id="movieGenre" formControlName="movieGenre">
+    </div>
+
+<div class="form-group">
+    <div *ngIf="movieForm.controls.movieHours.errors && 
+            (movieForm.controls.movieHours.touched || movieForm.controls.movieHours.dirty)">
+        Movie Hours is required
+    </div>
+    <label for="movieHours">movie Hours</label>
+    <input class="form-control" type="text" name="movieHours" id="movieHours" formControlName="movieHours">
+</div>
+<div class="form-group">
+    <div *ngIf="movieForm.controls.movieLanguage.errors && 
+            (movieForm.controls.movieLanguage.touched || movieForm.controls.movieLanguage.dirty)">
+        Movie Language is required
+    </div>
+    <label for="movieLanguage">movie Language</label>
+    <input class="form-control" type="text" name="movieLanguage" id="movieLanguage" formControlName="movieLanguage">
+</div>
+<div class="form-group">
+    <div *ngIf="movieForm.controls.movieDescription.errors && 
+            (movieForm.controls.movieDescription.touched || movieForm.controls.movieDescription.dirty)">
+        Movie Description is required
+    </div>
+    <label for="movieDescription">movie Description</label>
+    <input class="form-control" type="text" name="movieDescription" id="movieDescription" formControlName="movieDescription">
+</div>
+<div class="form-group">
+    <div *ngIf="movieForm.controls.movieReleaseDate.errors && 
+            (movieForm.controls.movieReleaseDate.touched || movieForm.controls.movieReleaseDate.dirty)">
+        Movie ReleaseDate is required
+    </div>
+    <label for="movieReleaseDate">movie ReleaseDate</label>
+    <input class="form-control" type="text" name="movieReleaseDate" id="movieReleaseDate" formControlName="movieReleaseDate">
+</div>
+
+
+    <input type="submit" value="Save Movie" class="btn btn-primary" [disabled]="movieForm.invalid">
+</form>
+<hr>
+<table class="table table-bordered">
+    <tr *ngIf="movies.length > 0">
+        <th>Movie Id</th>
+        <th>Movie Name</th>
+        <th>Movie Genre</th>
+        <th>Movie Hours</th>
+        <th>Movie Language</th>
+        <th>Movie Description</th>
+        <th>Movie ReleaseDate</th>
+    </tr>
+    <tr *ngFor="let m of movies">
+        <td>{{m.movieId}}</td>
+        <td>{{m.movieName}}</td>
+        <td>{{m.movieGenre}}</td>
+        <td>{{m.movieHours}}</td>
+        <td>{{m.movieLanguage}}</td>
+        <td>{{m.movieDescription}}</td>
+        <td>{{m.movieReleaseDate}}</td>
+     <td> <input type="button" (click)="deleteMovie(m.movieId)" value="Delete" class="btn btn-primary"></td>
+        <td><input type="button" (click)="UpdateMovie(m.movieId)"value="Update" class="btn btn-primary"></td>
+        <td><input type="button" (click)="findMovie(m.movieId)"value="find" class="btn btn-primary"></td>
+
+    </tr>
+    
+</table>
+   

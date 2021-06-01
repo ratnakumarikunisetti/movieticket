@@ -1,0 +1,56 @@
+<!--<p>movie-form works!</p>
+<div class="alert alert-primary">
+    <h3>Movie</h3>
+</div>
+<form [formGroup]="movieForm" (ngSubmit)="showMovie()">
+    <div class="form-group">
+        <label for="movieId">movie Id</label>
+        <input class="form-control" type="text" name="movieId" id="movieId" formControlName="movieId">
+    </div>
+    <div class="form-group">
+        <label for="movieName">Movie Name</label>
+        <input class="form-control" type="text" name="movieName" id="movieName" formControlName="movieName">
+    </div>
+    <div class="form-group">
+        <label for="movieGenre">Movie Genre</label>
+        <input class="form-control" type="text" name="movieGenre" id="movieGenre" formControlName="movieGenre">
+    </div>
+    <div class="form-group">
+        <label for="movieHours">Movie Hours</label>
+        <input class="form-control" type="text" name="movieHours" id="movieHours" formControlName="movieHours">
+    </div>
+    <div class="form-group">
+        <label for="movieLanguage">Movie Language</label>
+        <input class="form-control" type="text" name="movieLanguage" id="movieLanguage" formControlName="movieLanguage">
+    </div>
+    <div class="form-group">
+        <label for="movieDescription">Movie Description</label>
+        <input class="form-control" type="text" name="movieDescription" id="movieDescription" formControlName="movieDescription">
+    </div>
+    <div class="form-group">
+        <label for="movieReleaseDate">Movie ReleaseDate</label>
+        <input class="form-control" type="text" name="movieReleaseDate" id="movieReleaseDate" formControlName="movieReleaseDate">
+    </div>
+    <input type="submit" value="Add Movie" class="btn btn-primary">
+</form>
+<hr>
+<table class="table table-bordered">
+    <tr *ngIf="movies.length > 0">
+        <th>Movie Id</th>
+        <th>Movie Name</th>
+        <th>Movie Genre</th>
+        <th>Movie Hours</th>
+        <th>Movie Language</th>
+        <th>Movie Description</th>
+        <th>Movie Release</th>
+    </tr>
+    <tr *ngFor="let m of movies">
+        <td>{{m.movieId}}</td>
+        <td>{{m.movieName}}</td>
+        <td>{{m.movieGenre}}</td>
+        <td>{{m.movieHours}}</td>
+        <td>{{m.movieLanguage}}</td>
+        <td>{{m.movieDescription}}</td>
+        <td>{{m.movieReleaseDate}}</td>
+    </tr>
+</table>-->
